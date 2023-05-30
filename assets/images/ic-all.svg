@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="ic-all" transform="translate(-267 -861)" opacity="0.55">
+    <rect id="Rectangle_5" data-name="Rectangle 5" width="24" height="24" transform="translate(267 861)" fill="none"/>
+    <path id="check-all" d="M15.653,5.2a1.478,1.478,0,0,1,2.109,2.069L9.9,17.1a1.478,1.478,0,0,1-2.128.039L2.556,11.925A1.478,1.478,0,1,1,4.645,9.836L8.771,13.96l6.842-8.72a.5.5,0,0,1,.039-.043ZM13.84,15.326l1.813,1.813a1.478,1.478,0,0,0,2.126-.039l7.867-9.833A1.478,1.478,0,1,0,23.5,5.24l-6.844,8.72L15.7,13l-1.858,2.323Z" transform="translate(264.915 862.194)" fill="#397995"/>
+  </g>
+</svg>

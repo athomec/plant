@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="ic-plus" transform="translate(-317 -650)" opacity="0.5">
+    <rect id="Rectangle_6" data-name="Rectangle 6" width="20" height="20" transform="translate(317 650)" fill="none"/>
+    <path id="plus" d="M12.658,4a1.082,1.082,0,0,1,1.082,1.082v6.494h6.494a1.082,1.082,0,0,1,0,2.165H13.741v6.494a1.082,1.082,0,1,1-2.165,0V13.741H5.082a1.082,1.082,0,1,1,0-2.165h6.494V5.082A1.082,1.082,0,0,1,12.658,4Z" transform="translate(314.341 647.341)" fill="#397995"/>
+  </g>
+</svg>
