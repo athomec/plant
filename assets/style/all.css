@@ -13050,6 +13050,9 @@ body {
       font-size: 0.9rem;
       flex-direction: column;
       align-items: flex-start; } }
+  @media (max-width: 485px) {
+    .footer {
+      font-size: 0.8rem; } }
   .footer-brand {
     display: flex; }
     @media (max-width: 991px) {
@@ -13123,7 +13126,6 @@ body {
   align-items: center;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 6px #ccc;
   opacity: 0; }
   @media (max-width: 991px) {
     .gotop {
