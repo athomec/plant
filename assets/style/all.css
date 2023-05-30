@@ -11328,7 +11328,7 @@ input::placeholder, textarea::placeholder {
           transform: scale(10); } }
       @media (max-width: 576px) {
         .card-list-link:hover .card-list-circle {
-          transform: scale(10); } }
+          transform: scale(8); } }
   .card-list-tag {
     background: #397995;
     color: #fff;
@@ -13106,9 +13106,6 @@ body {
         border-top: 1px solid #fff;
         padding: 1rem 0 0 0;
         width: 100%; } }
-    @media (max-width: 576px) {
-      .footer-txt {
-        font-size: 0.9rem; } }
   .footer-bottom {
     padding: 0.75rem 0;
     text-align: center;
