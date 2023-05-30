@@ -11297,6 +11297,9 @@ input::placeholder, textarea::placeholder {
     flex-direction: column;
     align-items: center;
     padding: 1.5rem; }
+    @media (max-width: 576px) {
+      .card-list-link {
+        padding: 1rem; } }
     .card-list-link:after {
       content: "";
       position: absolute;
@@ -11306,6 +11309,10 @@ input::placeholder, textarea::placeholder {
       bottom: 1rem;
       width: calc(100% - 48px);
       height: 12px; }
+      @media (max-width: 576px) {
+        .card-list-link:after {
+          left: 1rem;
+          width: calc(100% - 32px); } }
     .card-list-link:hover:after {
       width: calc(100% - 12px); }
     .card-list-link:hover .card-list-circle {
