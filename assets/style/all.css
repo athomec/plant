@@ -11326,6 +11326,9 @@ input::placeholder, textarea::placeholder {
       @media (max-width: 767px) {
         .card-list-link:hover .card-list-circle {
           transform: scale(10); } }
+      @media (max-width: 576px) {
+        .card-list-link:hover .card-list-circle {
+          transform: scale(10); } }
   .card-list-tag {
     background: #397995;
     color: #fff;
@@ -11360,7 +11363,7 @@ input::placeholder, textarea::placeholder {
     top: calc(25% - 5px); }
     @media (max-width: 576px) {
       .card-list-circle {
-        display: none; } }
+        top: 30%; } }
   .card-list-title {
     text-align: center;
     color: #292929;
