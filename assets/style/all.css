@@ -8922,6 +8922,12 @@ body {
   width: 100%;
   -webkit-text-size-adjust: none; }
 
+html.sm {
+  font-size: 0.9rem; }
+
+html.lg {
+  font-size: 1.1rem; }
+
 body {
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
@@ -8929,10 +8935,6 @@ body {
   line-height: 1.5;
   letter-spacing: 0.5px;
   color: #292929; }
-  body.sm {
-    zoom: 0.9; }
-  body.lg {
-    zoom: 1.1; }
 
 img {
   display: block;

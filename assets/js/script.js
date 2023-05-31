@@ -17,11 +17,11 @@ $(function () {//JS開頭
 	//字級大小
 	$(".js-top-function button").click(function () {
 		if ($(this).hasClass("js-font-sm")) {
-			$("body").addClass("sm");
+			$("html").addClass("sm");
 		} else if ($(this).hasClass("js-font-md")) {
-			$("body").removeClass("sm").removeClass("lg");
+			$("html").removeClass("sm").removeClass("lg");
 		} else if ($(this).hasClass("js-font-lg")) {
-			$("body").addClass("lg");
+			$("html").addClass("lg");
 		}
 		$(this).addClass("active");
 		return false;
