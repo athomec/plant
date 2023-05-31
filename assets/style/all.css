@@ -12975,7 +12975,7 @@ body {
       color: #397995;
       line-height: 1; }
   .accordion-sub {
-    padding: 0.5rem 1rem 0.5rem 2rem;
+    padding: 0.5rem 1rem 0.5rem 22px;
     background: none !important;
     box-shadow: none !important;
     font-size: 1rem;
@@ -12997,7 +12997,7 @@ body {
       margin-right: 0.3rem; }
   .accordion-link {
     display: block;
-    padding: 0.5rem 1rem 0.5rem 64px; }
+    padding: 0.5rem 1rem 0.5rem 53px; }
     @media (max-width: 991px) {
       .accordion-link {
         font-size: 0.95rem; } }
