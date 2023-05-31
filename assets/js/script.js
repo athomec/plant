@@ -32,6 +32,30 @@ $(function () {//JS開頭
 	});
 	RESIZE();
 
+	$('.js-accordion-button').click(function () {
+		let acc = $('.js-accordion-button');
+		if ($(this).hasClass("collapsed")){
+			$(this).find("i").addClass("bi-plus-square");
+			$(this).find("i").removeClass("bi-dash-square-fill");
+		}else{
+			acc.find("i").addClass("bi-plus-square");
+			acc.find("i").removeClass("bi-dash-square-fill");
+			$(this).find("i").removeClass("bi-plus-square");
+			$(this).find("i").addClass("bi-dash-square-fill");
+		}
+	})
+	$('.js-accordion-sub').click(function () {
+		if ($(this).hasClass("collapsed")) {
+			$(this).find("i").addClass("bi-plus");
+			$(this).find("i").removeClass("bi-dash");
+		} else {
+			$(this).siblings('.js-accordion-sub').find("i").addClass("bi-plus");
+			$(this).siblings('.js-accordion-sub').find("i").removeClass("bi-dash");
+			$(this).find("i").removeClass("bi-plus");
+			$(this).find("i").addClass("bi-dash");
+		}
+	})
+
 	function RESIZE() {
 		var WINDOW = $(window).width();
 		var WINDOWH = $(window).height();

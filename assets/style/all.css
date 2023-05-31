@@ -12877,9 +12877,9 @@ body {
     width: 100%;
     opacity: 1;
     left: 0; }
-  .nav-link img {
-    width: 18px;
-    margin-right: 0.5rem; }
+  .nav-link i {
+    margin-right: 0.5rem;
+    font-size: 21px; }
   @media (max-width: 991px) {
     .nav-link {
       color: #fff;
@@ -12928,14 +12928,14 @@ body {
     line-height: 1.2;
     z-index: 10;
     transition: all 0.2s ease; }
-    .side-menu-toggler img {
-      width: 16px;
+    .side-menu-toggler i {
+      font-size: 18px;
       margin-right: 0;
-      margin-bottom: 4px; }
+      margin-bottom: 3px; }
   @media (max-width: 991px) {
     .side-menu.close {
       left: -250px; } }
-  .side-menu.close .side-menu-toggler img {
+  .side-menu.close .side-menu-toggler i {
     transform: rotate(180deg); }
 
 .accordion {
@@ -12962,15 +12962,6 @@ body {
         font-size: 0.9rem; } }
     .accordion-button:hover {
       opacity: 0.8; }
-    .accordion-button::before {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      margin-right: 0.75rem;
-      background: url("../images/ic-plus-square.svg");
-      background-size: cover;
-      flex-shrink: 0; }
     .accordion-button:after {
       display: none; }
     .accordion-button:not(.collapsed) {
@@ -12978,14 +12969,11 @@ body {
       font-weight: 500;
       color: #397995;
       border-bottom: 1px solid #397995; }
-      .accordion-button:not(.collapsed)::before {
-        background: url("../images/ic-minus-square.svg");
-        background-size: cover; }
-    .accordion-button[data-con="no-dropdown"]:before {
-      display: none; }
-    .accordion-button img {
-      width: 20px;
-      margin-right: 0.75rem; }
+    .accordion-button i {
+      font-size: 18px;
+      margin-right: 0.5rem;
+      color: #397995;
+      line-height: 1; }
   .accordion-sub {
     padding: 0.5rem 1rem 0.5rem 2rem;
     background: none !important;
@@ -12998,17 +12986,15 @@ body {
     @media (max-width: 485px) {
       .accordion-sub {
         font-size: 0.9rem; } }
-    .accordion-sub::before {
-      background: url("../images/ic-plus.svg");
-      background-size: cover; }
     .accordion-sub:not(.collapsed) {
       border-bottom: none;
       background: #fff !important; }
-      .accordion-sub:not(.collapsed):before {
-        background: url("../images/ic-minus.svg"); }
       .accordion-sub:not(.collapsed) + .accordion-collapse {
         background: #fff;
         padding-bottom: 0.75rem; }
+    .accordion-sub i {
+      font-size: 24px;
+      margin-right: 0.3rem; }
   .accordion-link {
     display: block;
     padding: 0.5rem 1rem 0.5rem 64px; }
