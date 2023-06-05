@@ -69,20 +69,5 @@ $(function () {//JS開頭
 	$(window).resize(function () {
 		RESIZE();
 	})
-
-	//messenger樣式
-	$(function () {
-		$('.fb_dialog_content iframe').load(function () {
-			var $iframe = $(this),
-				$contents = $iframe.contents();
-			// 取得 iframe 中的元素
-			$('#btn1').click(function () {
-				alert($contents.find('#t1').val());
-			});
-			// 執行各種動作時可以再判斷 $contents 是否為 null
-		});
-	});
-
-
 })//JS尾端	
 
