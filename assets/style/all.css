@@ -13251,6 +13251,21 @@ body {
     text-align: center;
     font-size: 0.8rem; }
 
+.prevent-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 1px;
+  background: #0000FF; }
+  @media (max-width: 767px) {
+    .prevent-list {
+      padding: 0 2px; } }
+  .prevent-list-item {
+    width: 5%;
+    padding: 2px 1px; }
+    @media (max-width: 767px) {
+      .prevent-list-item {
+        padding: 4px 2px; } }
+
 /*@preserve
  * Tempus Dominus Bootstrap4 v5.1.2 (https://tempusdominus.github.io/bootstrap-4/)
  * Copyright 2016-2018 Jonathan Peterson
