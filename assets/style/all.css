@@ -12826,7 +12826,7 @@ body {
       .side-info-slide {
         margin-right: 0;
         width: 100%;
-        max-width: 400px; } }
+        max-width: 300px; } }
   @media (max-width: 1200px) {
     .side-info-txt {
       width: 50%;

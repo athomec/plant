@@ -9,8 +9,10 @@ $(function () {//JS開頭
 			$(".gotop").addClass("show");
 			$(".js-navbar-collapse").removeClass("show");
 			$(".js-nav-toggler").addClass("collapsed");
+			$(".js-nav").addClass("shadow-sm");
 		} else {
 			$(".gotop").removeClass("show");
+			$(".js-nav").removeClass("shadow-sm");
 		}
 	});
 
