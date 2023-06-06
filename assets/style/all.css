@@ -10901,14 +10901,19 @@ input::placeholder, textarea::placeholder {
       .icon-toggle-menu-item img {
         display: none; } }
 
-.circle-btn {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+.item-btn {
+  background: #E3F6F8;
+  text-align: left;
+  box-shadow: 2px 2px 5px #d6d6d6;
+  padding: 0.75rem 1.5rem; }
+  @media (max-width: 767px) {
+    .item-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem; } }
+  .item-btn:hover {
+    background: #fff;
+    border: 1px solid #397995;
+    box-shadow: none; }
 
 .mobile-menu-item {
   color: #397995;
@@ -11445,6 +11450,59 @@ input::placeholder, textarea::placeholder {
     border: 1px solid #e0e0e0;
     border-radius: 0.5rem;
     padding: 0.5rem 0.75rem; }
+
+.content-box {
+  border-radius: 1rem;
+  background: #fff;
+  padding: 0.75rem 0 2rem 0;
+  position: relative;
+  margin-bottom: 1.5rem; }
+  .content-box:after {
+    content: "";
+    width: 3px;
+    height: 1.5rem;
+    position: absolute;
+    left: 1.5rem;
+    bottom: -24px;
+    background: #397995; }
+  .content-box:last-child {
+    margin-bottom: 0; }
+    .content-box:last-child:after {
+      display: none; }
+  .content-box-title {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    color: #397995;
+    font-size: 1.3rem;
+    display: flex;
+    margin-bottom: 1rem; }
+    @media (max-width: 991px) {
+      .content-box-title {
+        font-size: 1.125rem; } }
+  .content-box-id {
+    background: #397995;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    padding: 2px 1rem;
+    margin-right: 0.5rem;
+    font-size: 1rem; }
+  .content-box-txt {
+    color: #a3a3a3;
+    font-size: 0.95rem;
+    margin-left: auto;
+    font-weight: 400; }
+    @media (max-width: 991px) {
+      .content-box-txt {
+        font-size: 0.9rem; } }
+    @media (max-width: 767px) {
+      .content-box-txt {
+        font-size: 0.8rem;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 1rem; } }
 
 /*---------------------表格樣式---------------------*/
 .table-bd-primary-color th,
