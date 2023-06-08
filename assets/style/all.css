@@ -11045,12 +11045,14 @@ input::placeholder, textarea::placeholder {
   display: flex;
   justify-content: space-between;
   background: #f5f5f5;
+  border: 1px solid #f5f5f5;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   color: #525252; }
   .link-list-link:hover {
     background: #fff;
-    color: #397995; }
+    color: #397995;
+    border: 1px solid #397995; }
   .link-list-link p {
     display: block;
     overflow: hidden;
@@ -13325,6 +13327,12 @@ body {
 .carousel-control-next {
   right: 0;
   border-radius: 3px 0 0 3px; }
+
+.tab-content .form-control, .tab-content .form-select {
+  background: #f5f5f5;
+  border: 1px solid #d6d6d6; }
+  .tab-content .form-control:focus, .tab-content .form-select:focus {
+    box-shadow: none; }
 
 @media (max-width: 767px) {
   .tab-content {
