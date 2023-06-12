@@ -13069,10 +13069,13 @@ body {
     .accordion-button:after {
       display: none; }
     .accordion-button:not(.collapsed) {
+      pointer-events: none;
       background: none;
       font-weight: 500;
       color: #397995;
       border-bottom: 1px solid #397995; }
+    .accordion-button[data-con="none"] {
+      padding-left: 26px; }
     .accordion-button i {
       font-size: 18px;
       margin-right: 0.5rem;
