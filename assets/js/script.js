@@ -33,7 +33,16 @@ $(function () {//JS開頭
 		$(".js-side-menu").toggleClass("close");
 	});
 	RESIZE();
-
+	$('.js-accordion-all').click(function () {
+		let acc = $('.js-accordion-button');
+		if ($(this).hasClass("collapsed")) {
+			acc.find("i").removeClass("bi-dash-square-fill"); 
+			acc.find("i").addClass("bi-plus-square");
+		} else {
+			acc.find("i").addClass("bi-plus-square");
+			acc.find("i").removeClass("bi-dash-square-fill");
+		}
+	})
 	$('.js-accordion-button').click(function () {
 		let acc = $('.js-accordion-button');
 		if ($(this).hasClass("collapsed")){
