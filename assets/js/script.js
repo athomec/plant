@@ -74,8 +74,6 @@ $(function () {//JS開頭
 			$('.js-side-menu').addClass("close");
 			$(".js-side-content").addClass("close");
 		}
-		var containerHeight = $('.js-container').height();
-		$('.js-side-menu').height(containerHeight + 64);
 	}
 	$(window).resize(function () {
 		RESIZE();
