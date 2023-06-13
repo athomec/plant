@@ -12746,7 +12746,8 @@ body {
   font-family: Noto Sans TC, 微軟正黑體; }
 
 .container-xl {
-  max-width: 1435px; }
+  max-width: 1435px;
+  align-items: start; }
 
 /*--------------------header開始------------------*/
 .top-function {
