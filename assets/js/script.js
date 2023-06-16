@@ -66,6 +66,11 @@ $(function () {//JS開頭
 			$(this).find("i").addClass("bi-dash");
 		}
 	})
+	$(".js-sign-toggler").click(function () {
+		let sign = $($(this).attr("data-bs-target"));  // 将字符串转换为jQuery对象
+		let color = $(this).attr("data-con");
+		sign.find(".js-prevent-sign").attr("data-con", color);
+	});
 
 	function RESIZE() {
 		var WINDOW = $(window).width();

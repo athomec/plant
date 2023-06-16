@@ -13047,13 +13047,28 @@ body {
     background: #f5f5f5;
     padding: 1rem;
     box-shadow: 3px 3px 5px #ccc;
-    cursor: pointer; }
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; }
     @media (max-width: 1200px) {
       .side-info-container {
         width: 50%; } }
     @media (max-width: 767px) {
       .side-info-container {
         width: 100%; } }
+    .side-info-container[data-con="blue"] .prevent-list-item {
+      background: #0000FF;
+      border-color: #0000FF; }
+    .side-info-container[data-con="green"] .prevent-list-item {
+      background: #02AD52;
+      border-color: #02AD52; }
+    .side-info-container[data-con="yellow"] .prevent-list-item {
+      background: #FFEF11;
+      border-color: #FFEF11; }
+    .side-info-container[data-con="red"] .prevent-list-item {
+      background: #FE0002;
+      border-color: #FE0002; }
     .side-info-container:hover {
       box-shadow: none; }
 
@@ -13396,21 +13411,21 @@ body {
   @media (max-width: 1200px) {
     .prevent-sign {
       flex-direction: column; } }
-  .prevent-sign[data-con="stage1"] {
+  .prevent-sign[data-con="blue"] {
     border-color: #0000FF; }
-    .prevent-sign[data-con="stage1"] .prevent-sign-title:before {
+    .prevent-sign[data-con="blue"] .prevent-sign-title:before {
       background: #0000FF; }
-  .prevent-sign[data-con="stage2"] {
+  .prevent-sign[data-con="green"] {
     border-color: #02AD52; }
-    .prevent-sign[data-con="stage2"] .prevent-sign-title:before {
+    .prevent-sign[data-con="green"] .prevent-sign-title:before {
       background: #02AD52; }
-  .prevent-sign[data-con="stage3"] {
+  .prevent-sign[data-con="yellow"] {
     border-color: #FFEF11; }
-    .prevent-sign[data-con="stage3"] .prevent-sign-title:before {
+    .prevent-sign[data-con="yellow"] .prevent-sign-title:before {
       background: #FFEF11; }
-  .prevent-sign[data-con="stage4"] {
+  .prevent-sign[data-con="red"] {
     border-color: #FE0002; }
-    .prevent-sign[data-con="stage4"] .prevent-sign-title:before {
+    .prevent-sign[data-con="red"] .prevent-sign-title:before {
       background: #FE0002; }
   .prevent-sign-list {
     display: flex;
@@ -13506,15 +13521,17 @@ body {
 
 .prevent-list {
   display: flex;
-  flex-wrap: wrap;
-  padding: 0 1px;
-  background: #0000FF; }
+  flex-wrap: wrap; }
   @media (max-width: 767px) {
     .prevent-list {
       padding: 0 2px; } }
   .prevent-list-item {
     width: 5%;
     padding: 2px 1px; }
+    .prevent-list-item:first-child {
+      border-left: 1px solid; }
+    .prevent-list-item:last-child {
+      border-right: 1px solid; }
     @media (max-width: 767px) {
       .prevent-list-item {
         padding: 4px 2px; } }
