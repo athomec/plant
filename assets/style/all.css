@@ -11822,8 +11822,10 @@ input::placeholder, textarea::placeholder {
       opacity: 1; }
 
 .table-rwd {
-  min-width: 100%;
   font-size: 0.9rem; }
+  @media (max-width: 991px) {
+    .table-rwd {
+      min-width: 100% !important; } }
   .table-rwd tr {
     cursor: pointer; }
     @media (max-width: 991px) {
