@@ -9227,7 +9227,7 @@ input::placeholder, textarea::placeholder {
     border: 0;
     padding-left: 1.5rem;
     padding-right: 1.5rem; }
-    @media (max-width: 1430px) {
+    @media (max-width: 1400px) {
       .nav-tabs .nav-link {
         font-size: 1rem;
         padding-left: 1rem;
@@ -11317,7 +11317,7 @@ input::placeholder, textarea::placeholder {
       width: calc(100% - 12px); }
     .card-list-link:hover .card-list-circle {
       transform: scale(12); }
-      @media (max-width: 1430px) {
+      @media (max-width: 1400px) {
         .card-list-link:hover .card-list-circle {
           transform: scale(10); } }
       @media (max-width: 1200px) {
@@ -11354,7 +11354,7 @@ input::placeholder, textarea::placeholder {
     @media (max-width: 1550px) {
       .card-list-img {
         margin-top: -48px; } }
-    @media (max-width: 1430px) {
+    @media (max-width: 1400px) {
       .card-list-img {
         margin-top: -40px; } }
     @media (max-width: 767px) {
@@ -11382,7 +11382,7 @@ input::placeholder, textarea::placeholder {
     font-size: 1.3rem;
     width: 100%;
     margin-bottom: 1rem; }
-    @media (max-width: 1430px) {
+    @media (max-width: 1400px) {
       .card-list-title {
         margin-top: 0;
         font-size: 1.125rem; } }
@@ -11395,7 +11395,7 @@ input::placeholder, textarea::placeholder {
     color: #525252;
     width: 100%;
     margin-bottom: 1rem; }
-    @media (max-width: 1430px) {
+    @media (max-width: 1400px) {
       .card-list-txt {
         font-size: 0.9rem; } }
     @media (max-width: 576px) {
@@ -11833,6 +11833,8 @@ input::placeholder, textarea::placeholder {
           border: 1px solid #7a7a7a; }
           .table-rwd tr:nth-child(even) td:nth-child(1) {
             background: #7a7a7a; } }
+  .table-rwd thead {
+    background: #397995; }
   .table-rwd th {
     display: table-cell;
     background: #397995;
@@ -11842,17 +11844,18 @@ input::placeholder, textarea::placeholder {
     padding: 0.5rem 0;
     position: sticky;
     top: 0;
-    z-index: 2; }
+    z-index: 2;
+    font-size: 0.9rem !important; }
     @media (max-width: 991px) {
       .table-rwd th {
         display: none; } }
   .table-rwd td {
     display: table-cell;
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.75rem;
     color: #525252 !important;
     vertical-align: middle; }
-    @media (max-width: 1430px) {
+    @media (max-width: 1400px) {
       .table-rwd td {
         font-size: 0.95rem; } }
     @media (max-width: 991px) {
@@ -12227,7 +12230,7 @@ input::placeholder, textarea::placeholder {
   max-width: 180px;
   padding: 0 5px;
   margin: 0 0 10px 0; }
-  @media (max-width: 1430px) {
+  @media (max-width: 1400px) {
     .topic-hot-tag li {
       width: 33.33%; } }
   @media (max-width: 767px) {
@@ -12251,7 +12254,7 @@ input::placeholder, textarea::placeholder {
 .topic-hot-tag-sm li {
   width: 150px;
   max-width: 150px; }
-  @media (max-width: 1430px) {
+  @media (max-width: 1400px) {
     .topic-hot-tag-sm li {
       width: 33.33%; } }
   @media (max-width: 767px) {
@@ -12406,7 +12409,7 @@ input::placeholder, textarea::placeholder {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4; }
-    @media (max-width: 1430px) {
+    @media (max-width: 1400px) {
       .news-card .news-card-txt p {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -12757,7 +12760,7 @@ body {
   font-family: Noto Sans TC, 微軟正黑體; }
 
 .container-xl {
-  max-width: 1435px;
+  max-width: 1505px;
   align-items: start; }
 
 /*--------------------header開始------------------*/
@@ -12974,7 +12977,7 @@ body {
   border-radius: 0.75rem;
   padding: 0.75rem;
   font-size: 0.9rem; }
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
     .side-info {
       width: 100%;
       display: flex;
@@ -13015,7 +13018,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1400px) {
       .side-info-slide {
         flex-shrink: 0;
         width: 230px;
@@ -13031,7 +13034,7 @@ body {
         margin-right: 0;
         width: 100%;
         max-width: 300px; } }
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
     .side-info-txt {
       width: 50%;
       margin-right: 1rem;
@@ -13051,7 +13054,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1400px) {
       .side-info-container {
         width: 50%; } }
     @media (max-width: 767px) {
