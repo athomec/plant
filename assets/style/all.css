@@ -11577,8 +11577,8 @@ input::placeholder, textarea::placeholder {
     transition: all 0.2s ease;
     opacity: 0; }
   .scrollbar::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+    width: 10px;
+    height: 10px;
     border-radius: 10px;
     background-color: #d6d6d6;
     -webkit-transition: all 0.2s ease;
