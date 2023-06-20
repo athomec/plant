@@ -9197,6 +9197,9 @@ input::placeholder, textarea::placeholder {
       color: #F38530 !important; }
       .nav-tabs .nav-link.active:after {
         display: block; }
+  .nav-tabs.scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px; }
 
 /*-----------------文字樣式---------------------*/
 .primary-color {
