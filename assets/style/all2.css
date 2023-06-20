@@ -11433,12 +11433,12 @@ input::placeholder, textarea::placeholder {
 
 .table-rwd {
   font-size: 0.9rem; }
-  @media (max-width: 991px) {
+  @media (max-width: 1000px) {
     .table-rwd {
       min-width: 100% !important; } }
   .table-rwd tr {
     cursor: pointer; }
-    @media (max-width: 991px) {
+    @media (max-width: 1000px) {
       .table-rwd tr {
         border: 1px solid #5F9B41; }
         .table-rwd tr:nth-child(even) {
@@ -11458,7 +11458,7 @@ input::placeholder, textarea::placeholder {
     top: 0;
     z-index: 2;
     font-size: 0.9rem !important; }
-    @media (max-width: 991px) {
+    @media (max-width: 1000px) {
       .table-rwd th {
         display: none; } }
   .table-rwd td {
@@ -11470,7 +11470,7 @@ input::placeholder, textarea::placeholder {
     @media (max-width: 1400px) {
       .table-rwd td {
         font-size: 0.95rem; } }
-    @media (max-width: 991px) {
+    @media (max-width: 1000px) {
       .table-rwd td {
         font-size: 0.95rem;
         padding: 0.5rem 0.75rem;
@@ -12594,13 +12594,14 @@ body {
     height: calc(100% - 68px); }
 
 .side-info {
-  width: 25%;
+  width: 280px;
   margin-right: 2rem;
   text-align: center;
   background: #fff;
   border-radius: 0.75rem;
   padding: 0.75rem;
-  font-size: 0.9rem; }
+  font-size: 0.9rem;
+  flex-shrink: 0; }
   @media (max-width: 1400px) {
     .side-info {
       width: 100%;
@@ -12785,7 +12786,10 @@ body {
 .side-content {
   background: #fff;
   border-radius: 12px;
-  width: 100%; }
+  width: calc(100% - 312px); }
+  @media (max-width: 1400px) {
+    .side-content {
+      width: 100%; } }
 
 /*--------------------footer開始------------------*/
 .footer {
