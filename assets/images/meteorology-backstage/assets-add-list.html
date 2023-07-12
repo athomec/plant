@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="交通部中央氣象局,統籌管理服務中心,氣象局,統籌管理">
+    <meta name="description" content="資訊服務中心後台" />
+    <meta property="og:site_name" content="交通部中央氣象局-資訊服務中心後台" />
+    <meta property="og:image" content="img/fb-img.png" />
+    <!--分享設定-->
+    <title>交通部中央氣象局-資訊服務中心後台</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="icon" href="img/favicon.png" type="image/ico" />
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="css/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/newstyle.css" rel="stylesheet">
+
+        <!-- FooTable -->
+        <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="modal inmodal" id="info" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header py-2">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title primary">相關詳細資訊</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Message : Cannot access application 'mmc.exe'. Elevated privileges might be required. Try running
+                        the UiPath application as an administrator., At Source : </p>
+                </div>
+                <div class="modal-footer justify-content-center py-2">
+                    <button type="button" class="btn btn-primary mr-2" data-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="profile-element">
+                            <img alt="image" class="profile-element-img rounded-circle"
+                                src="img/backstage-ic-user.svg" />
+                            <span class="block mt-3 text-center">王小明 先生<br>歡迎登入後台</span>
+                        </div>
+                        <div class="logo-element">
+                            Menu
+                        </div>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-wrench"></i> <span class="nav-label">線上報修</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">表單申請</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-user"></i> <span class="nav-label">帳密開通</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="#">帳號</a></li>
+                            <li><a href="#">密碼</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-pie-chart"></i> <span class="nav-label">資產管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="assets.html">業務資産集(群)</a></li>
+                            <li><a href="assets.html">硬體</a></li>
+                            <li><a href="assets1.html">系統</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-database"></i> <span class="nav-label">硬體健康</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">效能監看</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">共享資源</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-question"></i> <span class="nav-label">常見問題</span></a>
+                    </li>
+                    <li>
+                        <a href="grid_options.html"><i class="fa fa-comment"></i> <span
+                                class="nav-label">意見回饋</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn " href="#"><i class="fa fa-bars"></i> </a>
+                        <a href="index.html"><img src="img/backstage-title.svg" alt="統籌管理服務中心" class="navbar-title"></a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right ml-auto">
+                        <form role="search" class="navbar-form-custom" action="search_results.html">
+                            <div class="form-group mr-2 ml-3">
+                                <input type="text" placeholder="請輸入搜尋關鍵字..." class="form-control" name="top-search"
+                                    id="top-search">
+                            </div>
+                        </form>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i class="fa fa-envelope"></i> <span class="label label-danger">16</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-messages dropdown-menu-right">
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a class="dropdown-item float-left" href="profile.html">
+                                            <img alt="image" class="rounded-circle" src="img/a7.jpg">
+                                        </a>
+                                        <div class="media-body">
+                                            <small class="float-right">46h ago</small>
+                                            <strong>Mike Loreipsum</strong> started following <strong>Monica
+                                                Smith</strong>. <br>
+                                            <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a class="dropdown-item float-left" href="profile.html">
+                                            <img alt="image" class="rounded-circle" src="img/a4.jpg">
+                                        </a>
+                                        <div class="media-body ">
+                                            <small class="float-right text-navy">5h ago</small>
+                                            <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica
+                                                Smith</strong>. <br>
+                                            <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a class="dropdown-item float-left" href="profile.html">
+                                            <img alt="image" class="rounded-circle" src="img/profile.jpg">
+                                        </a>
+                                        <div class="media-body ">
+                                            <small class="float-right">23h ago</small>
+                                            <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                            <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="mailbox.html" class="dropdown-item">
+                                            <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                <li>
+                                    <a href="mailbox.html" class="dropdown-item">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                            <span class="float-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <a href="profile.html" class="dropdown-item">
+                                        <div>
+                                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                            <span class="float-right text-muted small">12 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <a href="grid_options.html" class="dropdown-item">
+                                        <div>
+                                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                            <span class="float-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="notifications.html" class="dropdown-item">
+                                            <strong>See All Alerts</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="https://athomec.github.io/meteorology/" class="text-link ml-2" target="_blank">
+                                回前台首頁
+                            </a>
+                        </li>
+                        <li>
+                            <a href="login.html" class="text-link">
+                                登出
+                            </a>
+                        </li>
+                        <li>
+                            <a class="right-sidebar-toggle">
+                                <i class="fa fa-tasks"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2 class="title"><i class="fa fa-pie-chart"></i> 硬體</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="wrapper wrapper-content pt-4 pb-0">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">首頁</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="assets.html">資產管理</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="assets.html">硬體</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <strong>新增清單</strong>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!--內容開始-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="wrapper wrapper-content">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="ibox">
+                                    <div class="ibox-title" data-style="inline">
+                                        <h5 class="ibox-title-txt my-1">新增清單</h5>
+                                        <a href="assets.html" class="btn btn-primary btn-sm ml-auto mr-2" role="button">
+                                            <i class="fa fa-reply mr-1"></i> 回清單列表
+                                        </a>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <form role="form">
+                                            <h6 class="form-title" data-style="light">
+                                                <p class="form-title-txt"><i class="fa fa-file-text mr-2"></i>基本資料</p>
+                                            </h6>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <label for="member-id">承辦人 AD 帳號</label>
+                                                        <select class="form-control mb-2 mb-md-0" name="unit" id="maintain-unit">
+                                                            <option>請選擇</option>
+                                                            <option>option 2</option>
+                                                            <option>option 3</option>
+                                                            <option>option 4</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="jumbotron px-4 px-lg-5 py-4">
+                                                <div class="form-group mb-0">
+                                                    <div class="row align-items-end">
+                                                        <div class="col-sm-6 col-lg-3">
+                                                            <label for="type">種類</label>
+                                                            <select class="form-control m-b" id="type">
+                                                                <option>請選擇</option>
+                                                                <option>option 2</option>
+                                                                <option>option 3</option>
+                                                                <option>option 4</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-6 col-lg-3">
+                                                            <label for="purchase">採購文號</label>
+                                                            <input type="text" class="form-control m-b"
+                                                                value="DL360 Gen7" id="purchase">
+                                                        </div>
+                                                        <div class="col-sm-6 col-lg-3">
+                                                            <label for="purchase-number">採購案號</label>
+                                                            <input type="text" class="form-control m-b"
+                                                                value="DL360 Gen7" id="purchase-number">
+                                                        </div>
+                                                        <div class="col-sm-6 col-lg-3">
+                                                            <label for="previous-number">前案文號</label>
+                                                            <select class="form-control m-b" id="previous-number">
+                                                                <option>請選擇</option>
+                                                                <option>option 2</option>
+                                                                <option>option 3</option>
+                                                                <option>option 4</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-6 col-lg-3">
+                                                            <label class="purchase-document">案名</label>
+                                                            <input type="text" class="form-control mb-3 mb-lg-0" value="YCHS154345" id="purchase-document">
+                                                        </div>
+                                                        <div class="col-sm-6 col-lg-3">
+                                                            <label for="purchase-price">金額</label>
+                                                            <input type="text" class="form-control mb-3 mb-lg-0" value="24545445" id="purchase-price">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+                                            <h6 class="form-title" data-style="light" id="add-item">
+                                                <p class="form-title-txt"><i class="fa fa-file-text mr-2"></i>填寫採購項目</p>
+                                            </h6>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="type">請選擇設備種類</label>
+                                                        <select class="form-control m-b" id="type">
+                                                            <option>請選擇</option>
+                                                            <option>option 2</option>
+                                                            <option>option 3</option>
+                                                            <option>option 4</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="brand">請選擇品牌</label>
+                                                        <select class="form-control m-b" id="brand">
+                                                            <option>請選擇</option>
+                                                            <option>option 2</option>
+                                                            <option>option 3</option>
+                                                            <option>option 4</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="model">型號</label>
+                                                        <input type="text" class="form-control m-b"
+                                                            value="DL360 Gen7" id="model">
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="serial-number">序號</label>
+                                                            <input type="text" class="form-control m-b"
+                                                                value="YCHS154345" id="serial-number">
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="winner">得標廠商</label>
+                                                            <input type="text" class="form-control m-b"
+                                                                value="YCHS154345" id="winner">
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="purchase-date">採購日</label>
+                                                        <input class="m-b form-date-input" type="datetime-local"
+                                                            id="purchase-date" name="meeting-time" step="1"
+                                                            class="mb-0 mb-sm-2" style="max-width: 100%;">
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="period">履約期限</label>
+                                                        <input class="m-b form-date-input" type="datetime-local"
+                                                            id="period" name="meeting-time" step="1"
+                                                            class="mb-0 mb-sm-2" style="max-width: 100%;">
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="warranty-period">保固期限</label>
+                                                        <input type="text" class="form-control m-b" value="5" id="warranty-period">
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="number">數量</label>
+                                                        <input type="text" class="form-control m-b" value="1" id="number">
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="price">價格</label>
+                                                        <input type="text" class="form-control m-b" value="5,000,000" id="price">
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="winner-contact">廠商窗口</label>
+                                                        <input type="text" class="form-control m-b" value="24545445" id="winner-contact">
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="winner-mail">廠商窗口聯繫郵件信箱</label>
+                                                        <input type="text" class="form-control m-b" id="winner-mail">
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="winner-way">廠商窗口聯繫方式</label>
+                                                        <textarea class="form-control" id="winner-way" rows="5"></textarea>
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3">
+                                                        <label for="ps">備註</label>
+                                                        <textarea class="form-control" id="ps" rows="5"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form method="get">
+                                            <div class="form-group row">
+                                                <div class="col-12 d-flex justify-content-center flex-wrap">
+                                                    <a href="#" class="ibox-action btn btn-lg btn-gray mr-2 mb-2">
+                                                        清除欄位
+                                                    </a>
+                                                    <a href="#add-list" class="btn btn-lg btn-info mr-2 mb-2">
+                                                        <i class="fa fa-eye mr-1"></i>  檢視已填項目
+                                                    </a>
+                                                    <a href="#add-list" class="btn btn-lg btn-success mb-2">
+                                                        <i class="fa fa-level-down"></i>  加入暫存列表
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="hr-line-dashed"></div>
+                                        <h6 class="form-title" data-style="light" id="add-list">
+                                            <p class="form-title-txt"><i class="fa fa-file-text mr-2"></i>採購項目暫存列表</p>
+                                        </h6>
+                                        <table class="footable table table-stripped table-rwd toggle-arrow-tiny" data-page-size="8" data-filter="none">
+                                            <thead>
+                                            <tr>
+            
+                                                <th data-toggle="true">設備種類</th>
+                                                <th>品牌</th>
+                                                <th data-hide="phone">型號</th>
+                                                <th data-hide="phone,tablet">序號</th>
+                                                <th data-hide="phone,tablet">得標廠商</th>
+                                                <th data-hide="phone,tablet">採購日</th>
+                                                <th data-hide="phone,tablet">履約期限</th>
+                                                <th data-hide="phone,tablet,pc">保固期限</th>
+                                                <th data-hide="phone,tablet,pc">數量</th>
+                                                <th data-hide="phone,tablet,pc">價格</th>
+                                                <th data-hide="phone,tablet,pc">廠商窗口</th>
+                                                <th data-hide="phone,tablet,pc">廠商窗口聯繫郵件信箱</th>
+                                                <th data-hide="phone,tablet,pc">廠商窗口聯繫方式</th>
+                                                <th data-hide="phone,tablet,pc">備註</th>
+                                                <th>刪除</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>伺服器</td>
+                                                <td>DELL 戴爾</td>
+                                                <td>DELL PowerEdge R740</td>
+                                                <td>sn12345678</td>
+                                                <td><span class="pie">DELL 戴爾</span></td>
+                                                <td>2023/06/27</td>
+                                                <td>2023/08/27</td>
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td>NT $12,000</td>
+                                                <td>王曉明</td>
+                                                <td>pur@gmail.com</td>
+                                                <td>0966-888888</td>
+                                                <td>到貨時間未定</td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fa fa-trash text-danger font-md"></i></a></td>
+                                            </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <td colspan="15">
+                                                    <ul class="pagination d-flex justify-content-center"></ul>
+                                                </td>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                        <div class="row justify-content-center">
+                                            <div class="col-6">
+                                                <a href="#add-item" class="btn btn-lg btn-info mb-2 w-100">
+                                                    繼續加入項目
+                                                </a>
+                                            </div>
+                                            <div class="col-6">
+                                                <a href="assets.html" class="btn btn-lg btn-danger mb-2 w-100">
+                                                    <i class="fa fa-check mr-1"></i>確認新增資料
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--內容結束-->
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- GITTER -->
+    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Sparkline demo data  -->
+    <script src="js/demo/sparkline-demo.js"></script>
+
+    <!-- ChartJS-->
+    <script src="js/plugins/chartJs/Chart.min.js"></script>
+
+    <!-- Toastr -->
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+
+     <!-- FooTable -->
+     <script src="js/plugins/footable/footable.all.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            var now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            now.setMilliseconds(null)
+            now.setSeconds(null)
+            document.getElementById('purchase-date').value = now.toISOString().slice(0, -1);
+            document.getElementById('period').value = now.toISOString().slice(0, -1);
+
+            $('.footable').footable();
+        });
+    </script>
+</body>
+
+</html>

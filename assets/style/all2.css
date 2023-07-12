@@ -10983,11 +10983,15 @@ input::placeholder, textarea::placeholder {
   .card-list-img {
     margin-top: -56px;
     width: 90%;
+    height: 158px;
     max-width: 240px;
     position: relative;
     z-index: 10;
     margin-bottom: 0.5rem;
-    border-radius: 0.5rem; }
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
     @media (max-width: 1550px) {
       .card-list-img {
         margin-top: -48px; } }
@@ -11001,6 +11005,10 @@ input::placeholder, textarea::placeholder {
       .card-list-img {
         margin-top: 30px;
         width: 100%; } }
+    .card-list-img img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 0.5rem; }
   .card-list-circle {
     position: absolute;
     transition: all 0.2s ease;
@@ -12664,7 +12672,7 @@ body {
         max-width: 300px; } }
   @media (max-width: 1400px) {
     .side-info-txt {
-      width: 50%;
+      width: 100%;
       margin-right: 1rem;
       padding: 1rem 0; } }
   @media (max-width: 767px) {
@@ -12683,9 +12691,6 @@ body {
     flex-direction: column;
     align-items: flex-start; }
     @media (max-width: 1400px) {
-      .side-info-container {
-        width: 50%; } }
-    @media (max-width: 767px) {
       .side-info-container {
         width: 100%; } }
     .side-info-container[data-con="blue"] .prevent-list-item {

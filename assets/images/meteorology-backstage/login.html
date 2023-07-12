@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="交通部中央氣象局,統籌管理服務中心,氣象局,統籌管理">
+    <meta name="description" content="資訊服務中心後台" />
+    <meta property="og:site_name" content="交通部中央氣象局-資訊服務中心後台" />
+    <meta property="og:image" content="img/fb-img.png" />
+    <!--分享設定-->
+
+    <title>交通部中央氣象局-資訊服務中心後台</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="icon" href="img/favicon.png" type="image/ico" />
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="css/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/newstyle.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<div id="wrapper" data-con="login">
+    <div class="gray-bg dashbard-1 fixed-top">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" data-con="login">
+                <div class="navbar-header mx-4">
+                    <img src="img/backstage-title.svg" alt="統籌管理服務中心" class="navbar-title w-100">
+                </div>
+                <ul class="nav navbar-top-links navbar-right ml-auto">
+                    <li>
+                        <a href="https://athomec.github.io/meteorology/" class="text-link ml-2" target="_blank">
+                            回前台首頁
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="login loginscreen animated fadeInDown">
+        <div class="login-p1"><img src="./img/login-p1.svg" class="w-100"></div>
+        <div class="login-p2"><img src="./img/login-p2.svg" class="w-100"></div>
+        <div class="login-p3"><img src="./img/login-p3.svg" class="w-100"></div>
+        <div>
+            <div class="text-center">
+                <img src="img/logo-1.svg" alt="交通部中央氣象局" class="login-logo-top mb-3"><br>
+                <img src="img/logo-2.svg" alt="統籌管理服務中心" class="login-logo-bottom mb-3">
+                <img src="img/login-vision.svg" class="login-mobile-pic">
+            </div>
+            <h3 class="login-title">登入後台</h3>
+            <div class="login-form px-4 px-sm-5 py-3 py-sm-4 mb-3">
+                <div id="ad" data-bs-parent=".password-form">
+                    <div class="mb-3">
+                        <label for="apply-number" class="form-label">帳號</label>
+                        <input type="text" class="form-control" id="apply-number" placeholder="請輸入帳號">
+                    </div>
+                    <div class="mb-3">
+                        <label for="apply-mail" class="form-label">密碼</label>
+                        <input type="email" class="form-control" id="apply-mail" placeholder="請輸入密碼">
+                    </div>
+                    <div class="row flex-column align-items-center">
+                        <div class="col-md-7">
+                            <button class="btn login-btn w-100 mb-2" onclick="location.href='index.html'" data-bs-toggle="modal" data-bs-target="#message">確認</button>
+                        </div>
+                        <a href="https://athomec.github.io/meteorology/account.html" target="_blank" class="login-link mx-auto">忘記密碼</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

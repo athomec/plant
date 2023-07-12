@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="交通部中央氣象局,統籌管理服務中心,氣象局,統籌管理">
+    <meta name="description" content="資訊服務中心後台" />
+    <meta property="og:site_name" content="交通部中央氣象局-資訊服務中心後台" />
+    <meta property="og:image" content="img/fb-img.png" />
+    <!--分享設定-->
+
+    <title>交通部中央氣象局-資訊服務中心後台</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="icon" href="img/favicon.png" type="image/ico" />
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="css/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/newstyle.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="modal inmodal" id="info" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header py-2">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title primary">相關詳細資訊</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Message : Cannot access application 'mmc.exe'. Elevated privileges might be required. Try running the UiPath application as an administrator., At Source : </p>
+                </div>
+                <div class="modal-footer justify-content-center py-2">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="profile-element">
+                            <img alt="image" class="profile-element-img rounded-circle"
+                                src="img/backstage-ic-user.svg" />
+                            <span class="block mt-3 text-center">王小明 先生<br>歡迎登入後台</span>
+                        </div>
+                        <div class="logo-element">
+                            Menu
+                        </div>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-wrench"></i> <span
+                                class="nav-label">線上報修</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">表單申請</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-user"></i> <span class="nav-label">帳密開通</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="#">帳號</a></li>
+                            <li><a href="#">密碼</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-pie-chart"></i> <span class="nav-label">資產管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="assets.html">業務資産集(群)</a></li>
+                            <li><a href="assets.html">硬體</a></li>
+                            <li><a href="assets1.html">系統</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-database"></i> <span class="nav-label">硬體健康</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">效能監看</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">共享資源</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-question"></i> <span class="nav-label">常見問題</span></a>
+                    </li>
+                    <li>
+                        <a href="grid_options.html"><i class="fa fa-comment"></i> <span class="nav-label">意見回饋</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn " href="#"><i class="fa fa-bars"></i> </a>
+                        <a href="index.html"><img src="img/backstage-title.svg" alt="統籌管理服務中心" class="navbar-title"></a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right ml-auto">
+                        <form role="search" class="navbar-form-custom" action="search_results.html">
+                            <div class="form-group mr-2 ml-3">
+                                <input type="text" placeholder="請輸入搜尋關鍵字..." class="form-control" name="top-search"
+                                    id="top-search">
+                            </div>
+                        </form>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i class="fa fa-envelope"></i> <span class="label label-danger">16</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-messages dropdown-menu-right">
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a class="dropdown-item float-left" href="profile.html">
+                                            <img alt="image" class="rounded-circle" src="img/a7.jpg">
+                                        </a>
+                                        <div class="media-body">
+                                            <small class="float-right">46h ago</small>
+                                            <strong>Mike Loreipsum</strong> started following <strong>Monica
+                                                Smith</strong>. <br>
+                                            <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a class="dropdown-item float-left" href="profile.html">
+                                            <img alt="image" class="rounded-circle" src="img/a4.jpg">
+                                        </a>
+                                        <div class="media-body ">
+                                            <small class="float-right text-navy">5h ago</small>
+                                            <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica
+                                                Smith</strong>. <br>
+                                            <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a class="dropdown-item float-left" href="profile.html">
+                                            <img alt="image" class="rounded-circle" src="img/profile.jpg">
+                                        </a>
+                                        <div class="media-body ">
+                                            <small class="float-right">23h ago</small>
+                                            <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                            <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="mailbox.html" class="dropdown-item">
+                                            <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                <li>
+                                    <a href="mailbox.html" class="dropdown-item">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                            <span class="float-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <a href="profile.html" class="dropdown-item">
+                                        <div>
+                                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                            <span class="float-right text-muted small">12 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <a href="grid_options.html" class="dropdown-item">
+                                        <div>
+                                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                            <span class="float-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="notifications.html" class="dropdown-item">
+                                            <strong>See All Alerts</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="https://athomec.github.io/meteorology/" class="text-link ml-2" target="_blank">
+                                回前台首頁
+                            </a>
+                        </li>
+                        <li>
+                            <a href="login.html" class="text-link">
+                                登出
+                            </a>
+                        </li>
+                        <li>
+                            <a class="right-sidebar-toggle">
+                                <i class="fa fa-tasks"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="row  border-bottom white-bg dashboard-header">
+                <div class="container-fluid ibox">
+                    <div class="row ibox-filter">
+                        <div class="col-12 col-xl-10 d-flex flex-wrap">
+                            <div data-toggle="buttons"
+                                class="btn-group btn-group-toggle ibox-filter-group mb-2 mr-md-3">
+                                <label class="btn btn-sm btn-white"> <input type="radio" id="option1" name="options">
+                                    一天</label>
+                                <label class="btn btn-sm btn-white active"> <input type="radio" id="option2"
+                                        name="options">一週 </label>
+                                <label class="btn btn-sm btn-white"> <input type="radio" id="option3" name="options">
+                                    一個月</label>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <div class="input-wrapper d-flex flex-wrap">
+                                    <div class="ibox-label">自訂區間：</div>
+                                    <label class="sr-only" for="time1-period-from">from</label>
+                                    <input type="datetime-local" id="time1-period-from" name="meeting-time" step="1" class="mb-0 mb-sm-2">
+                                </div>
+                                <div class="input-wrapper d-flex flex-wrap">
+                                    <div class="ibox-label mx-1 mx-lg-2">~</div>
+                                    <label class="sr-only" for="time1-period-to">to</label>
+                                    <input type="datetime-local" id="time1-period-to" name="meeting-time" step="1" class="mr-sm-2 mb-2">
+                                </div>
+                                <button class="btn btn-sm btn-info mb-2" type="button">確認</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="main-title">使用次數排名</h2>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input" checked>
+                    <label class="custom-control-label" for="customRadioInline1">單位</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline2">個人</label>
+                </div>
+                    <ul class="list-group clear-list mt-4">
+                        <li class="list-group-item fist-item">
+                            <span class="float-right">
+                                09:00 pm
+                            </span>
+                            <span class="label label-primary">1</span> Please contact me
+                        </li>
+                        <li class="list-group-item">
+                            <span class="float-right">
+                                10:16 am
+                            </span>
+                            <span class="label label-primary">2</span> Sign a contract
+                        </li>
+                        <li class="list-group-item">
+                            <span class="float-right">
+                                08:22 pm
+                            </span>
+                            <span class="label label-primary">3</span> Open new shop
+                        </li>
+                        <li class="list-group-item">
+                            <span class="float-right">
+                                11:06 pm
+                            </span>
+                            <span class="label label-primary">4</span> Call back to Sylvia
+                        </li>
+                        <li class="list-group-item">
+                            <span class="float-right">
+                                12:00 am
+                            </span>
+                            <span class="label label-primary">5</span> Write a letter to Sandra
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="main-title">趨勢統計概觀</h2>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="ad-account" name="radio-account" class="custom-control-input" checked>
+                        <label class="custom-control-label" for="ad-account">微軟AD帳號</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="ldap-account" name="radio-account" class="custom-control-input">
+                        <label class="custom-control-label" for="ldap-account">LDAP帳號</label>
+                    </div>
+                    <div class="flot-chart dashboard-chart">
+                        <div class="flot-chart-content" id="flot-dashboard-chart"></div>
+                    </div>
+                    <div class="row text-left">
+                        <div class="col">
+                            <div class="m-l-md">
+                                <span class="h5 font-bold m-t block mb-0 text-primary">38</span>
+                                <p class="m-b block">總次數</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <span class="h5 font-bold m-t block mb-0 text-primary">15</span>
+                            <p class="m-b block">重製密碼次數</p>
+                        </div>
+                        <div class="col">
+                            <span class="h5 font-bold m-t block mb-0 text-primary">23</span>
+                            <p class="m-b block">解鎖帳號次數</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="main-title">使用行為占比</h2>
+                    <div class="statistic-box">
+                        <div class="row text-center">
+                            <div class="col-lg-6">
+                                <canvas id="doughnutChart2" width="80" height="80" style="margin: 18px auto 0"></canvas>
+                                <h5>Kolter</h5>
+                            </div>
+                            <div class="col-lg-6">
+                                <canvas id="doughnutChart" width="80" height="80" style="margin: 18px auto 0"></canvas>
+                                <h5>Maxtor</h5>
+                            </div>
+                        </div>
+                        <div class="m-t">
+                            <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--內容開始-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="wrapper wrapper-content">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="ibox">
+                                    <div class="ibox-title">
+                                        <h5 class="ibox-title-txt my-1">流程執行紀錄清單</h5>
+                                        <a href="#" target="_blank" class="btn btn-primary btn-sm ml-auto mr-2" role="button">
+                                            <i class="fa fa-file mr-1"></i> 匯出 EXCEL
+                                        </a>
+                                        <a href="#" target="_blank" class="btn btn-danger btn-sm" role="button">
+                                            <i class="fa fa-file mr-1"></i> 匯出 PDF
+                                        </a>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                                <i class="fa fa-wrench"></i>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-user">
+                                                <li><a href="#" class="dropdown-item">Config option 1</a>
+                                                </li>
+                                                <li><a href="#" class="dropdown-item">Config option 2</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="container-fluid px-0">
+                                            <div class="row ibox-filter mb-3">
+                                                <div class="col-12 col-xl-10 d-flex flex-wrap">
+                                                    <div data-toggle="buttons"
+                                                        class="btn-group btn-group-toggle ibox-filter-group mb-2 mr-md-3">
+                                                        <label class="btn btn-sm btn-white"> <input type="radio"
+                                                                id="option1" name="options"> 一天</label>
+                                                        <label class="btn btn-sm btn-white active"> <input type="radio"
+                                                                id="option2" name="options">一週 </label>
+                                                        <label class="btn btn-sm btn-white"> <input type="radio"
+                                                                id="option3" name="options"> 一個月</label>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap">
+                                                        <div class="input-wrapper d-flex flex-wrap">
+                                                            <div class="ibox-label">自訂區間：</div>
+                                                            <label class="sr-only" for="time2-period-from">from</label>
+                                                            <input type="datetime-local" id="time2-period-from"
+                                                                name="meeting-time" step="1" class="mb-0 mb-sm-2">
+                                                        </div>
+                                                        <div class="input-wrapper d-flex flex-wrap">
+                                                            <div class="ibox-label mx-1 mx-lg-2">~</div>
+                                                            <label class="sr-only" for="time2-period-to">to</label>
+                                                            <input type="datetime-local" id="time2-period-to"
+                                                                name="meeting-time" step="1" class="mr-sm-2 mb-2">
+                                                        </div>
+                                                        <button class="btn btn-sm btn-info mb-2"
+                                                            type="button">確認</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-xl-2 d-flex">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="搜尋...">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-sm btn-info" type="button">
+                                                                <i class="fa fa-search"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive scroll mb-3">
+                                            <table class="table table-combine table-bordered table-striped mb-0" style="min-width:1350px">
+                                                <thead>
+                                                    <tr>
+                                                        <th>批次執行流水編號</th>
+                                                        <th>流水編號</th>
+                                                        <th width="90">執行工作</th>
+                                                        <th width="110">使用者帳號</th>
+                                                        <th>email</th>
+                                                        <th width="90">接收時間</th>
+                                                        <th width="90">完成時間</th>
+                                                        <th width="90">執行結果</th>
+                                                        <th width="110">更新後的<br>使用者密碼</th>
+                                                        <th width="90">回傳API<br>執行狀態</th>
+                                                        <th width="90">回傳API<br>詳細資訊</th>
+                                                        <th width="90">相關<br>詳細資訊</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>20221011163945</td>
+                                                        <td>202210070012</td>
+                                                        <td>密碼重置</td>
+                                                        <td>mag01</td>
+                                                        <td>terrenceye@dawningtech.com.tw</td>
+                                                        <td>2022/10/07 16:16:26</td>
+                                                        <td>2022/10/11 16:40:06</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>4bW24gSKt4Kt</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>Finish</td>
+                                                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#info">檢視</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20221011163945</td>
+                                                        <td>202210070012</td>
+                                                        <td>密碼重置</td>
+                                                        <td>mag01</td>
+                                                        <td>terrenceye@dawningtech.com.tw</td>
+                                                        <td>2022/10/07 16:16:26</td>
+                                                        <td>2022/10/11 16:40:06</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>4bW24gSKt4Kt</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>Finish</td>
+                                                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#info">檢視</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20221011163945</td>
+                                                        <td>202210070012</td>
+                                                        <td>密碼重置</td>
+                                                        <td>mag01</td>
+                                                        <td>terrenceye@dawningtech.com.tw</td>
+                                                        <td>2022/10/07 16:16:26</td>
+                                                        <td>2022/10/11 16:40:06</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>4bW24gSKt4Kt</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>Finish</td>
+                                                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#info">檢視</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20221011163945</td>
+                                                        <td>202210070012</td>
+                                                        <td>密碼重置</td>
+                                                        <td>mag01</td>
+                                                        <td>terrenceye@dawningtech.com.tw</td>
+                                                        <td>2022/10/07 16:16:26</td>
+                                                        <td>2022/10/11 16:40:06</td>
+                                                        <td><i class="fa fa-exclamation-triangle text-danger" title="danger"></i></td>
+                                                        <td>4bW24gSKt4Kt</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>Finish</td>
+                                                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#info">檢視</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20221011163945</td>
+                                                        <td>202210070012</td>
+                                                        <td>密碼重置</td>
+                                                        <td>mag01</td>
+                                                        <td>terrenceye@dawningtech.com.tw</td>
+                                                        <td>2022/10/07 16:16:26</td>
+                                                        <td>2022/10/11 16:40:06</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>4bW24gSKt4Kt</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>Finish</td>
+                                                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#info">檢視</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20221011163945</td>
+                                                        <td>202210070012</td>
+                                                        <td>密碼重置</td>
+                                                        <td>mag01</td>
+                                                        <td>terrenceye@dawningtech.com.tw</td>
+                                                        <td>2022/10/07 16:16:26</td>
+                                                        <td>2022/10/11 16:40:06</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>4bW24gSKt4Kt</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>Finish</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20221011163945</td>
+                                                        <td>202210070012</td>
+                                                        <td>密碼重置</td>
+                                                        <td>mag01</td>
+                                                        <td>terrenceye@dawningtech.com.tw</td>
+                                                        <td>2022/10/07 16:16:26</td>
+                                                        <td>2022/10/11 16:40:06</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>4bW24gSKt4Kt</td>
+                                                        <td><i class="fa fa-exclamation-triangle text-danger" title="danger"></i></td>
+                                                        <td>Finish</td>
+                                                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#info">檢視</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20221011163945</td>
+                                                        <td>202210070012</td>
+                                                        <td>密碼重置</td>
+                                                        <td>mag01</td>
+                                                        <td>terrenceye@dawningtech.com.tw</td>
+                                                        <td>2022/10/07 16:16:26</td>
+                                                        <td>2022/10/11 16:40:06</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>4bW24gSKt4Kt</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>Finish</td>
+                                                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#info">檢視</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20221011163945</td>
+                                                        <td>202210070012</td>
+                                                        <td>密碼重置</td>
+                                                        <td>mag01</td>
+                                                        <td>terrenceye@dawningtech.com.tw</td>
+                                                        <td>2022/10/07 16:16:26</td>
+                                                        <td>2022/10/11 16:40:06</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>4bW24gSKt4Kt</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>Finish</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20221011163945</td>
+                                                        <td>202210070012</td>
+                                                        <td>密碼重置</td>
+                                                        <td>mag01</td>
+                                                        <td>terrenceye@dawningtech.com.tw</td>
+                                                        <td>2022/10/07 16:16:26</td>
+                                                        <td>2022/10/11 16:40:06</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>4bW24gSKt4Kt</td>
+                                                        <td><i class="fa fa-check text-navy" title="info"></i></td>
+                                                        <td>Finish</td>
+                                                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#info">檢視</button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <ul class="pagination d-flex justify-content-center">
+                                            <li class="footable-page-arrow disabled"><a data-page="first" href="#first"><i class="fa fa-step-backward"></i></a></li>
+                                            <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev"><i class="fa fa-chevron-left"></i></a></li>
+                                            <li class="footable-page active"><a data-page="0" href="#">1</a></li>
+                                            <li class="footable-page"><a data-page="1" href="#">2</a></li>
+                                            <li class="footable-page"><a data-page="2" href="#">3</a></li>
+                                            <li class="footable-page-arrow"><a data-page="next" href="#next"><i class="fa fa-chevron-right"></i></a></li>
+                                            <li class="footable-page-arrow"><a data-page="last" href="#last"><i class="fa fa-step-forward"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--內容結束-->
+        </div>
+    </div>
+    <div id="right-sidebar">
+        <div class="sidebar-container">
+
+            <ul class="nav nav-tabs navs-3">
+                <li>
+                    <a class="nav-link active" data-toggle="tab" href="#tab-1"> Notes </a>
+                </li>
+                <li>
+                    <a class="nav-link" data-toggle="tab" href="#tab-2"> Projects </a>
+                </li>
+                <li>
+                    <a class="nav-link" data-toggle="tab" href="#tab-3"> <i class="fa fa-gear"></i> </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+
+                <div id="tab-1" class="tab-pane active">
+
+                    <div class="sidebar-title">
+                        <h3> <i class="fa fa-comments-o"></i> Latest Notes</h3>
+                        <small><i class="fa fa-tim"></i> You have 10 new message.</small>
+                    </div>
+
+                    <div>
+
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a1.jpg">
+
+                                    <div class="m-t-xs">
+                                        <i class="fa fa-star text-danger"></i>
+                                        <i class="fa fa-star text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+
+                                    There are many variations of passages of Lorem Ipsum available.
+                                    <br>
+                                    <small class="text-muted">Today 4:21 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a2.jpg">
+                                </div>
+                                <div class="media-body">
+                                    The point of using Lorem Ipsum is that it has a more-or-less normal.
+                                    <br>
+                                    <small class="text-muted">Yesterday 2:45 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a3.jpg">
+
+                                    <div class="m-t-xs">
+                                        <i class="fa fa-star text-danger"></i>
+                                        <i class="fa fa-star text-danger"></i>
+                                        <i class="fa fa-star text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    Mevolved over the years, sometimes by accident, sometimes on purpose (injected
+                                    humour
+                                    and the like).
+                                    <br>
+                                    <small class="text-muted">Yesterday 1:10 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a4.jpg">
+                                </div>
+
+                                <div class="media-body">
+                                    Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+                                    <br>
+                                    <small class="text-muted">Monday 8:37 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a8.jpg">
+                                </div>
+                                <div class="media-body">
+
+                                    All the Lorem Ipsum generators on the Internet tend to repeat.
+                                    <br>
+                                    <small class="text-muted">Today 4:21 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a7.jpg">
+                                </div>
+                                <div class="media-body">
+                                    Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes
+                                    from a
+                                    line in section 1.10.32.
+                                    <br>
+                                    <small class="text-muted">Yesterday 2:45 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a3.jpg">
+
+                                    <div class="m-t-xs">
+                                        <i class="fa fa-star text-danger"></i>
+                                        <i class="fa fa-star text-danger"></i>
+                                        <i class="fa fa-star text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below.
+                                    <br>
+                                    <small class="text-muted">Yesterday 1:10 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a4.jpg">
+                                </div>
+                                <div class="media-body">
+                                    Uncover many web sites still in their infancy. Various versions have.
+                                    <br>
+                                    <small class="text-muted">Monday 8:37 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="tab-2" class="tab-pane">
+
+                    <div class="sidebar-title">
+                        <h3> <i class="fa fa-cube"></i> Latest projects</h3>
+                        <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
+                    </div>
+
+                    <ul class="sidebar-list">
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Business valuation</h4>
+                                It is a long established fact that a reader will be distracted.
+
+                                <div class="small">Completion with: 22%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 22%;" class="progress-bar progress-bar-danger"></div>
+                                </div>
+                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Contract with Company </h4>
+                                Many desktop publishing packages and web page editors.
+
+                                <div class="small">Completion with: 48%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 48%;" class="progress-bar"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Meeting</h4>
+                                By the readable content of a page when looking at its layout.
+
+                                <div class="small">Completion with: 14%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="label label-primary float-right">NEW</span>
+                                <h4>The generated</h4>
+                                <!--<div class="small float-right m-t-xs">9 hours ago</div>-->
+                                There are many variations of passages of Lorem Ipsum available.
+                                <div class="small">Completion with: 22%</div>
+                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Business valuation</h4>
+                                It is a long established fact that a reader will be distracted.
+
+                                <div class="small">Completion with: 22%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 22%;" class="progress-bar progress-bar-danger"></div>
+                                </div>
+                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Contract with Company </h4>
+                                Many desktop publishing packages and web page editors.
+
+                                <div class="small">Completion with: 48%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 48%;" class="progress-bar"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Meeting</h4>
+                                By the readable content of a page when looking at its layout.
+
+                                <div class="small">Completion with: 14%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="label label-primary float-right">NEW</span>
+                                <h4>The generated</h4>
+                                <!--<div class="small float-right m-t-xs">9 hours ago</div>-->
+                                There are many variations of passages of Lorem Ipsum available.
+                                <div class="small">Completion with: 22%</div>
+                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div id="tab-3" class="tab-pane">
+
+                    <div class="sidebar-title">
+                        <h3><i class="fa fa-gears"></i> Settings</h3>
+                        <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
+                    </div>
+
+                    <div class="setings-item">
+                        <span>
+                            Show notifications
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                <label class="onoffswitch-label" for="example">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Disable Chat
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox"
+                                    id="example2">
+                                <label class="onoffswitch-label" for="example2">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Enable history
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                <label class="onoffswitch-label" for="example3">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Show charts
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+                                <label class="onoffswitch-label" for="example4">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Offline users
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox"
+                                    id="example5">
+                                <label class="onoffswitch-label" for="example5">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Global search
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox"
+                                    id="example6">
+                                <label class="onoffswitch-label" for="example6">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Update everyday
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+                                <label class="onoffswitch-label" for="example7">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-content">
+                        <h4>Settings</h4>
+                        <div class="small">
+                            I belive that. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            And typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                            the
+                            1500s.
+                            Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    </div>
+    </div>
+    <!--
+    <div class="small-chat-box fadeInRight animated">
+        <div class="heading" draggable="true">
+            <small class="chat-date float-right">
+                02.19.2015
+            </small>
+            Small chat
+        </div>
+
+        <div class="content">
+
+            <div class="left">
+                <div class="author-name">
+                    Monica Jackson <small class="chat-date">
+                        10:02 am
+                    </small>
+                </div>
+                <div class="chat-message active">
+                    Lorem Ipsum is simply dummy text input.
+                </div>
+
+            </div>
+            <div class="right">
+                <div class="author-name">
+                    Mick Smith
+                    <small class="chat-date">
+                        11:24 am
+                    </small>
+                </div>
+                <div class="chat-message">
+                    Lorem Ipsum is simpl.
+                </div>
+            </div>
+            <div class="left">
+                <div class="author-name">
+                    Alice Novak
+                    <small class="chat-date">
+                        08:45 pm
+                    </small>
+                </div>
+                <div class="chat-message active">
+                    Check this stock char.
+                </div>
+            </div>
+            <div class="right">
+                <div class="author-name">
+                    Anna Lamson
+                    <small class="chat-date">
+                        11:24 am
+                    </small>
+                </div>
+                <div class="chat-message">
+                    The standard chunk of Lorem Ipsum
+                </div>
+            </div>
+            <div class="left">
+                <div class="author-name">
+                    Mick Lane
+                    <small class="chat-date">
+                        08:45 pm
+                    </small>
+                </div>
+                <div class="chat-message active">
+                    I belive that. Lorem Ipsum is simply dummy text.
+                </div>
+            </div>
+
+
+        </div>
+        <div class="form-chat">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control">
+                <span class="input-group-btn"> <button class="btn btn-primary" type="button">Send
+                    </button> </span>
+            </div>
+        </div>
+
+    </div>
+    <div id="small-chat">
+
+        <span class="badge badge-danger float-right">5</span>
+        <a class="open-small-chat" href="">
+            <i class="fa fa-comments"></i>
+
+        </a>
+    </div>
+-->
+    <div id="right-sidebar" class="animated">
+        <div class="sidebar-container">
+
+            <ul class="nav nav-tabs navs-3">
+                <li>
+                    <a class="nav-link active" data-toggle="tab" href="#tab-1"> Notes </a>
+                </li>
+                <li>
+                    <a class="nav-link" data-toggle="tab" href="#tab-2"> Projects </a>
+                </li>
+                <li>
+                    <a class="nav-link" data-toggle="tab" href="#tab-3"> <i class="fa fa-gear"></i> </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+
+                <div id="tab-1" class="tab-pane active">
+
+                    <div class="sidebar-title">
+                        <h3> <i class="fa fa-comments-o"></i> Latest Notes</h3>
+                        <small><i class="fa fa-tim"></i> You have 10 new message.</small>
+                    </div>
+
+                    <div>
+
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a1.jpg">
+
+                                    <div class="m-t-xs">
+                                        <i class="fa fa-star text-danger"></i>
+                                        <i class="fa fa-star text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+
+                                    There are many variations of passages of Lorem Ipsum available.
+                                    <br>
+                                    <small class="text-muted">Today 4:21 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a2.jpg">
+                                </div>
+                                <div class="media-body">
+                                    The point of using Lorem Ipsum is that it has a more-or-less normal.
+                                    <br>
+                                    <small class="text-muted">Yesterday 2:45 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a3.jpg">
+
+                                    <div class="m-t-xs">
+                                        <i class="fa fa-star text-danger"></i>
+                                        <i class="fa fa-star text-danger"></i>
+                                        <i class="fa fa-star text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    Mevolved over the years, sometimes by accident, sometimes on purpose (injected
+                                    humour and the like).
+                                    <br>
+                                    <small class="text-muted">Yesterday 1:10 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a4.jpg">
+                                </div>
+
+                                <div class="media-body">
+                                    Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+                                    <br>
+                                    <small class="text-muted">Monday 8:37 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a8.jpg">
+                                </div>
+                                <div class="media-body">
+
+                                    All the Lorem Ipsum generators on the Internet tend to repeat.
+                                    <br>
+                                    <small class="text-muted">Today 4:21 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a7.jpg">
+                                </div>
+                                <div class="media-body">
+                                    Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes
+                                    from a line in section 1.10.32.
+                                    <br>
+                                    <small class="text-muted">Yesterday 2:45 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a3.jpg">
+
+                                    <div class="m-t-xs">
+                                        <i class="fa fa-star text-danger"></i>
+                                        <i class="fa fa-star text-danger"></i>
+                                        <i class="fa fa-star text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below.
+                                    <br>
+                                    <small class="text-muted">Yesterday 1:10 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="float-left text-center">
+                                    <img alt="image" class="rounded-circle message-avatar" src="img/a4.jpg">
+                                </div>
+                                <div class="media-body">
+                                    Uncover many web sites still in their infancy. Various versions have.
+                                    <br>
+                                    <small class="text-muted">Monday 8:37 pm</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="tab-2" class="tab-pane">
+
+                    <div class="sidebar-title">
+                        <h3> <i class="fa fa-cube"></i> Latest projects</h3>
+                        <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
+                    </div>
+
+                    <ul class="sidebar-list">
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Business valuation</h4>
+                                It is a long established fact that a reader will be distracted.
+
+                                <div class="small">Completion with: 22%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 22%;" class="progress-bar progress-bar-danger"></div>
+                                </div>
+                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Contract with Company </h4>
+                                Many desktop publishing packages and web page editors.
+
+                                <div class="small">Completion with: 48%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 48%;" class="progress-bar"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Meeting</h4>
+                                By the readable content of a page when looking at its layout.
+
+                                <div class="small">Completion with: 14%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="label label-primary float-right">NEW</span>
+                                <h4>The generated</h4>
+                                There are many variations of passages of Lorem Ipsum available.
+                                <div class="small">Completion with: 22%</div>
+                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Business valuation</h4>
+                                It is a long established fact that a reader will be distracted.
+
+                                <div class="small">Completion with: 22%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 22%;" class="progress-bar progress-bar-danger"></div>
+                                </div>
+                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Contract with Company </h4>
+                                Many desktop publishing packages and web page editors.
+
+                                <div class="small">Completion with: 48%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 48%;" class="progress-bar"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="small float-right m-t-xs">9 hours ago</div>
+                                <h4>Meeting</h4>
+                                By the readable content of a page when looking at its layout.
+
+                                <div class="small">Completion with: 14%</div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="label label-primary float-right">NEW</span>
+                                <h4>The generated</h4>
+                                <!--<div class="small float-right m-t-xs">9 hours ago</div>-->
+                                There are many variations of passages of Lorem Ipsum available.
+                                <div class="small">Completion with: 22%</div>
+                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div id="tab-3" class="tab-pane">
+
+                    <div class="sidebar-title">
+                        <h3><i class="fa fa-gears"></i> Settings</h3>
+                        <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
+                    </div>
+
+                    <div class="setings-item">
+                        <span>
+                            Show notifications
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                <label class="onoffswitch-label" for="example">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Disable Chat
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox"
+                                    id="example2">
+                                <label class="onoffswitch-label" for="example2">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Enable history
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                <label class="onoffswitch-label" for="example3">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Show charts
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+                                <label class="onoffswitch-label" for="example4">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Offline users
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox"
+                                    id="example5">
+                                <label class="onoffswitch-label" for="example5">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Global search
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox"
+                                    id="example6">
+                                <label class="onoffswitch-label" for="example6">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                        <span>
+                            Update everyday
+                        </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+                                <label class="onoffswitch-label" for="example7">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-content">
+                        <h4>Settings</h4>
+                        <div class="small">
+                            I belive that. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            And typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                            the 1500s.
+                            Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- GITTER -->
+    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Sparkline demo data  -->
+    <script src="js/demo/sparkline-demo.js"></script>
+
+    <!-- ChartJS-->
+    <script src="js/plugins/chartJs/Chart.min.js"></script>
+
+    <!-- Toastr -->
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+
+            var data1 = [
+                [0, 4], [1, 8], [2, 5], [3, 10], [4, 4], [5, 16], [6, 5], [7, 11], [8, 6], [9, 11], [10, 30], [11, 10], [12, 13], [13, 4], [14, 3], [15, 3], [16, 6]
+            ];
+            var data2 = [
+                [0, 1], [1, 0], [2, 2], [3, 0], [4, 1], [5, 3], [6, 1], [7, 5], [8, 2], [9, 3], [10, 2], [11, 1], [12, 0], [13, 2], [14, 8], [15, 0], [16, 0]
+            ];
+            $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart"), [
+                data1, data2
+            ],
+                {
+                    series: {
+                        lines: {
+                            show: false,
+                            fill: true
+                        },
+                        splines: {
+                            show: true,
+                            tension: 0.4,
+                            lineWidth: 1,
+                            fill: 0.4
+                        },
+                        points: {
+                            radius: 0,
+                            show: true
+                        },
+                        shadowSize: 2
+                    },
+                    grid: {
+                        hoverable: true,
+                        clickable: true,
+                        tickColor: "#d5d5d5",
+                        borderWidth: 1,
+                        color: '#d5d5d5'
+                    },
+                    colors: ["#1ab394", "#1C84C6"],
+                    xaxis: {
+                    },
+                    yaxis: {
+                        ticks: 4
+                    },
+                    tooltip: false
+                }
+            );
+
+            var doughnutData = {
+                labels: ["App", "Software", "Laptop"],
+                datasets: [{
+                    data: [300, 50, 100],
+                    backgroundColor: ["#a3e1d4", "#dedede", "#9CC3DA"]
+                }]
+            };
+
+
+            var doughnutOptions = {
+                responsive: false,
+                legend: {
+                    display: false
+                }
+            };
+
+
+            var ctx4 = document.getElementById("doughnutChart").getContext("2d");
+            new Chart(ctx4, { type: 'doughnut', data: doughnutData, options: doughnutOptions });
+
+            var doughnutData = {
+                labels: ["App", "Software", "Laptop"],
+                datasets: [{
+                    data: [70, 27, 85],
+                    backgroundColor: ["#a3e1d4", "#dedede", "#9CC3DA"]
+                }]
+            };
+
+
+            var doughnutOptions = {
+                responsive: false,
+                legend: {
+                    display: false
+                }
+            };
+
+
+            var ctx4 = document.getElementById("doughnutChart2").getContext("2d");
+            new Chart(ctx4, { type: 'doughnut', data: doughnutData, options: doughnutOptions });
+
+
+            var now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            now.setMilliseconds(null)
+            now.setSeconds(null)
+            document.getElementById('time1-period-from').value = now.toISOString().slice(0, -1);
+            document.getElementById('time1-period-to').value = now.toISOString().slice(0, -1);
+            document.getElementById('time2-period-from').value = now.toISOString().slice(0, -1);
+            document.getElementById('time2-period-to').value = now.toISOString().slice(0, -1);
+
+        });
+    </script>
+</body>
+
+</html>
